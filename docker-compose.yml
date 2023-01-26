@@ -1,0 +1,11 @@
+version: '3.2'
+
+services:
+  worker1:
+    container_name: "busse-rebate-worker1"
+    build: .
+    command: ["./app"]
+  worker2:
+    container_name: "busse-rebate-worker2"
+    build: .
+    command: ["./app"]

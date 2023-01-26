@@ -106,8 +106,8 @@ type RebateTracing struct {
 }
 
 func (r RebateTracing) Interface() map[string]interface{} {
-	invoice_date, _ := time.Parse("2006-01-02", r.InvoiceDate)
-	added_to_queue, _ := time.Parse("2006-01-02", r.AddedToQueue)
+	invoice_date, _ := time.Parse("2006-01-02T15:04:05.000", r.InvoiceDate)
+	added_to_queue, _ := time.Parse("2006-01-02T15:04:05.000", r.AddedToQueue)
 
 	return map[string]interface{}{
 		"period":          r.Period,

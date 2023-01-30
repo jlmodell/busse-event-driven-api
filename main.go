@@ -95,9 +95,9 @@ type RebateTracing struct {
 	InvoiceDate    string  `json:"invoice_date"`
 	Part           string  `json:"part"`
 	UnitRebate     float64 `json:"unit_rebate"`
-	ShipQty        int     `json:"ship_qty"`
+	ShipQty        float64 `json:"ship_qty"`
 	Uom            string  `json:"uom"`
-	ShipQtyAsCs    int     `json:"ship_qty_as_cs"`
+	ShipQtyAsCs    float64 `json:"ship_qty_as_cs"`
 	Rebate         float64 `json:"rebate"`
 	Cost           float64 `json:"cost"`
 	CheckLicense   bool    `json:"check_license"`

@@ -28,6 +28,8 @@ func init() {
 	mongo_uri = os.Getenv("MONGODB_URI")
 }
 
+// const mgm = "c:/temp/wip/mgm_weekly__january_2023_week_1.csv"
+
 func main() {
 	var err error
 	mdb, err = mongo.NewClient(options.Client().ApplyURI(mongo_uri))
@@ -41,6 +43,32 @@ func main() {
 	}
 
 	defer mdb.Disconnect(ctx)
+
+	// // read mgm csv
+	// file, err := os.Open(mgm)
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// defer file.Close()
+
+	// // read csv
+	// reader := csv.NewReader(file)
+	// reader.Comma = ','
+	// reader.FieldsPerRecord = -1
+	// reader.LazyQuotes = true
+	// reader.TrimLeadingSpace = true
+
+	// // read header
+	// header, err := reader.Read()
+	// if err != nil {
+	// 	panic(err)
+	// }
+
+	// // read data
+	// data, err := reader.ReadAll()
+	// if err != nil {
+	// 	panic(err)
+	// }
 
 	opt := &redis.Options{
 		Addr:     redis_url,
